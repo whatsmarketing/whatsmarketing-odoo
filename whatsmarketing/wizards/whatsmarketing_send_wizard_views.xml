@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_whatsmarketing_send_wizard_form" model="ir.ui.view">
+        <field name="name">whatsmarketing.send.wizard.form</field>
+        <field name="model">whatsmarketing.send.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Send WhatsApp Message">
+                <group>
+                    <field name="phone_number" placeholder="e.g., 919876543210"/>
+                    <field name="message_type" widget="radio"/>
+                </group>
+                <group invisible="message_type != 'text'">
+                    <field name="message_body"
+                           placeholder="Type your message here..."
+                           required="message_type == 'text'"
+                           nolabel="1"/>
+                </group>
+                <group invisible="message_type != 'template'">
+                    <field name="template_id"
+                           placeholder="e.g., 294457"
+                           required="message_type == 'template'"/>
+                </group>
+                <footer>
+                    <button name="action_send"
+                            type="object"
+                            string="Send WhatsApp"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
