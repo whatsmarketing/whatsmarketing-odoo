@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_whatsmarketing_message_user,whatsmarketing.message.user,model_whatsmarketing_message,base.group_user,1,1,1,0
+access_whatsmarketing_message_manager,whatsmarketing.message.manager,model_whatsmarketing_message,base.group_system,1,1,1,1
+access_whatsmarketing_send_wizard_user,whatsmarketing.send.wizard.user,model_whatsmarketing_send_wizard,base.group_user,1,1,1,1
