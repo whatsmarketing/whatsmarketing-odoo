@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_whatsmarketing" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.whatsmarketing</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='emails_section']" position="after">
+                <block title="WhatsMarketing" id="whatsmarketing_section" name="whatsmarketing">
+                    <setting id="whatsmarketing_api_key_setting"
+                             string="API Key"
+                             help="Your API key from app.whatsmarketing.in/api/developer/console">
+                        <field name="whatsmarketing_api_key" placeholder="Enter your API key"/>
+                    </setting>
+                    <setting id="whatsmarketing_phone_id_setting"
+                             string="Phone Number ID"
+                             help="Your WhatsApp Business phone number ID from WhatsMarketing">
+                        <field name="whatsmarketing_phone_number_id" placeholder="e.g., 337228512808270"/>
+                    </setting>
+                    <setting id="whatsmarketing_url_setting"
+                             string="API Base URL"
+                             help="Default is https://app.whatsmarketing.in/api/v1 - do not change unless instructed by support">
+                        <field name="whatsmarketing_base_url"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
